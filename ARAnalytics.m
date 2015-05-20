@@ -1,9 +1,6 @@
 #import "ARAnalytics.h"
 #import "ARAnalyticalProvider.h"
 #import "ARAnalyticsProviders.h"
-#import "UIResponder+ARAnalytics.h"
-#import "UIApplication+ARAnalytics.h"
-#import "UIViewController+ARAnalytics.h"
 
 static ARAnalytics *_sharedAnalytics;
 static BOOL _ARLogShouldPrintStdout = YES;
@@ -15,6 +12,9 @@ static BOOL _ARLogShouldPrintStdout = YES;
 @end
 
 #if TARGET_OS_IPHONE
+#import "UIResponder+ARAnalytics.h"
+#import "UIViewController+ARAnalytics.h"
+#import "UIApplication+ARAnalytics.h"
 #import "ARNavigationControllerDelegateProxy.h"
 @interface ARAnalytics ()
 {
