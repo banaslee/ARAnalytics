@@ -1,6 +1,6 @@
 #import "UIViewController+ARAnalytics.h"
 
-NSString *const kAKTrackingEventScreenKey = @"screen";
+NSString *const kARAnalyticsEventScreenKey = @"screen";
 
 @implementation UIViewController (ARAnalytics)
 
@@ -11,10 +11,10 @@ NSString *const kAKTrackingEventScreenKey = @"screen";
 - (void)trackEvent:(NSString *)event withProperties:(NSDictionary *)properties {
     NSMutableDictionary *mutableProperties = [NSMutableDictionary dictionaryWithDictionary:properties];
     
-    if (!mutableProperties[kAKTrackingEventScreenKey]) {
+    if (!mutableProperties[kARAnalyticsEventScreenKey]) {
         NSString *screenName = [self screenNameForTracking];
         if (screenName.length > 0) {
-            mutableProperties[kAKTrackingEventScreenKey] = screenName;
+            mutableProperties[kARAnalyticsEventScreenKey] = screenName;
         }
     }
     
