@@ -147,6 +147,12 @@ HockeyApp
 
 Starting with HockeyApp version 3.7.0, the HockeyApp provider will automatically keep logs of events and include those in crash reports, thus adding ‘breadcrumbs’ to your report and hopefully providing helpful context for your crasp reports. Any messages logged with `ARLog()` will also get included in the report.
 
+ResponderChain
+----
+
+By calling `-trackEvent:withProperties:` on a UIResponder subclass it's possible to send an event down the responder chain and with that capture data to be tracked. To add more data along the chain just override the same method and add values to the `properties` dictionary.
+By default, the first view controller in the chain will add the property `screen` to the `properties` dictionary with its class name. This can be customized by overriding the method `-screenNameForTracking` on any `UIViewController` subclass. By returning nil on this method it's possible to avoid this behavior.
+
 Contributing
 ====
 See [Contributing](https://github.com/orta/ARAnalytics/blob/master/CONTRIBUTING.md)

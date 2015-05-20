@@ -12,7 +12,10 @@ NSString *const kAKTrackingEventScreenKey = @"screen";
     NSMutableDictionary *mutableProperties = [NSMutableDictionary dictionaryWithDictionary:properties];
     
     if (!mutableProperties[kAKTrackingEventScreenKey]) {
-        mutableProperties[kAKTrackingEventScreenKey] = [self screenNameForTracking];
+        NSString *screenName = [self screenNameForTracking];
+        if (screenName.length > 0) {
+            mutableProperties[kAKTrackingEventScreenKey] = screenName;
+        }
     }
     
     [super trackEvent:event withProperties:mutableProperties];
