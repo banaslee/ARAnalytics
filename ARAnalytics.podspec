@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
 
   s.subspec "CoreMac" do |ss|
     ss.source_files = ['*.{h,m}', 'Providers/ARAnalyticalProvider.{h,m}', 'Providers/ARAnalyticsProviders.h']
-    ss.exclude_files = ['ARDSL.{h,m}', 'ARNavigationControllerDelegateProxy.{h,m}', 'UI*+ARAnalytics.{h,m}']
+    ss.exclude_files = ['ARDSL.{h,m}', 'ARNavigationControllerDelegateProxy.{h,m}', 'UI*ARAnalytics.{h,m}']
     ss.platform = :osx
   end
 

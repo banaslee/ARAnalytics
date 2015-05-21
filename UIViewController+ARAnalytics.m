@@ -1,8 +1,10 @@
 #import "UIViewController+ARAnalytics.h"
 
-#import "UIResponder+ARAnalytics.h"
-
 NSString *const kARAnalyticsEventScreenKey = @"screen";
+
+@interface UIResponder ()
+- (void)trackEvent:(NSString *)event withProperties:(NSDictionary *)properties;
+@end
 
 @implementation UIViewController (ARAnalytics)
 
